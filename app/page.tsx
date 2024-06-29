@@ -4,9 +4,17 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { gradient } from "@/components/Gradient";
 import { useEffect } from "react";
-
+import { experimentalStyled as styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import Image from 'next/image';
 import valoteam from '../public/image/valoteam.png';
+import image from '../public/image/image.png';
+import image2 from '../public/image/image2.png';
+import image3 from '../public/image/image3.png';
+
+
 
 export default function Home() {
   useEffect(() => {
@@ -608,10 +616,53 @@ export default function Home() {
       </div>
     
     </AnimatePresence>
-     <div className="container">
+     <motion.div style={{padding:"58px"}}>
 
-     <h2 style={{ textAlign: 'center' }}>What we have achieved in the past one year!</h2>
-     </div>
+     <motion.h1 className="font-inter" style={{ textAlign: 'center',fontSize:"60px", color:"#1E2B3A",fontWeight:"bold" }}>What we have achieved in the past one year!</motion.h1>
+     <Box sx={{ flexGrow: 1 ,paddingTop:"50px", paddingLeft:"20%"}}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+     
+        <Grid item xs={2} sm={3} md={3}>
+          
+          <Image
+        src={image}
+        alt="Valo Team"
+        width={100} // Set the width of the image
+        height={300} // Set the height of the image
+        // You can add more props if needed
+      />
+      <h2 style={{color:"rgb(66, 66, 66)", fontSize:"36px",fontWeight:"600"}}>2000+</h2>
+      <h2 style={{fontSize:"24px",fontWeight:"400",color:"rgb(66, 66, 66)",width:"50%"}}>Successful Apartment Tours</h2>
+         
+        </Grid>
+        <Grid item xs={2} sm={3} md={3}>
+        <Image
+        src={image2}
+        alt="Valo Team"
+        width={100} // Set the width of the image
+        height={300} // Set the height of the image
+        // You can add more props if needed
+      />
+      
+      <h2 style={{color:"rgb(66, 66, 66)", fontSize:"36px",fontWeight:"600"}}>280+</h2>
+      <h2 style={{fontSize:"24px",fontWeight:"400",color:"rgb(66, 66, 66)",width:"50%"}}>Apartments Rented</h2>
+        </Grid>
+        <Grid item xs={2} sm={3} md={3}>
+        <Image
+        src={image3}
+        alt="Valo Team"
+        width={100} // Set the width of the image
+        height={300} // Set the height of the image
+        // You can add more props if needed
+      />
+    
+      <h2 style={{color:"rgb(66, 66, 66)", fontSize:"36px",fontWeight:"600"}}>1100+</h2>
+      <h2 style={{fontSize:"24px",fontWeight:"400",color:"rgb(66, 66, 66)",width:"50%"}}>Happy Renters</h2>
+        </Grid>
+       
+      </Grid>
+    </Box>
+     </motion.div>
      </div>
   );
 }

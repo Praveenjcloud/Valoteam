@@ -596,7 +596,7 @@ export default function Home() {
       </div>
     
     </AnimatePresence>
-     <motion.div style={{padding:"58px"}}>
+     {/* <motion.div style={{padding:"58px"}}>
 
      <motion.h1 className="font-inter" style={{ textAlign: 'center',fontSize:"60px", color:"#1E2B3A",fontWeight:"bold" }}>What we have achieved in <br />the past one year!</motion.h1>
      <Box sx={{ flexGrow: 1 ,paddingTop:"8%", paddingLeft:"20%"}}>
@@ -642,7 +642,7 @@ export default function Home() {
        
       </Grid>
     </Box>
-     </motion.div>
+     </motion.div> */}
 
      <div>
      {/* <Box sx={{ flexGrow: 1 ,paddingTop:"8%", paddingLeft:"8%"}}>

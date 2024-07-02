@@ -1056,6 +1056,7 @@ export default function DemoPage() {
                   }}
                   className="max-w-lg mx-auto px-4 lg:px-0"
                 >
+{/*                   
                   <h2 className="text-4xl font-bold text-[#1E2B3A]">
                     And an interviewer
                   </h2>
@@ -1354,7 +1355,7 @@ export default function DemoPage() {
                         </svg>
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               ) : (
                 <p>Step 3</p>

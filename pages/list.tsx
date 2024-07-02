@@ -315,6 +315,8 @@ export default function List() {
           justifyContent: 'space-between',
           '@media (max-width: 600px)': {
             width: '100%',
+            gap: '2px',
+
           },
         }}
       >
@@ -409,10 +411,14 @@ export default function List() {
      
       </Box>
        
-      <Box sx={{ paddingLeft: '10px', paddingRight: '10px', textAlign: isMobile ? 'center' : 'left'  , zIndex: 1000,
+      <Box sx={{ paddingLeft: '10px', paddingRight: '10px', textAlign: isMobile ? 'center' : 'left'  , zIndex: 1000,width:"100%",
           backgroundColor: '#fff',
           padding: '10px',
-          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',}}>
+          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', 
+          '@media (max-width: 600px)': {
+            width: '100%',
+            marginTop:"110px"
+          },}}>
         <Typography variant="h1" sx={{ fontSize: "20px", lineHeight: "1.2", marginBottom: "10px" }}>
           
           Boston, MA Apartments For Rent

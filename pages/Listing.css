@@ -1,0 +1,260 @@
+/* .container-fluid {
+    padding: 0;
+  }
+   */
+  .image-gallery-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .image-gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+  
+  .image-gallery img {
+    width: 25%;
+    flex-shrink: 0;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 5px;
+  }
+  
+  .date-selector {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 5px;
+    width: calc(29% - 10px);
+  }
+  
+  .date-box.active {
+    border-color: #4561EC;
+    color: #4561EC;
+  }
+  
+  .time-selector {
+    width: 100%;
+    
+  }
+  
+  .time-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .time-button.active {
+    border-color: #4561EC;
+    background: #4561EC;
+    color: white;
+  }
+
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .scroll-button.left {
+    left: 10px;
+  }
+  
+  .scroll-button.right {
+    right: 10px;
+  }
+  
+  .scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .details {
+    padding: 30px 0px;
+    color: white;
+  }
+  
+  .card {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .contact-button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #4561EC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .contact-button:hover {
+    background-color: #243691;
+  }
+  
+  .tour-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tour-button:hover {
+    background-color: #5a6268;
+  }
+  .tour-button::selection {
+    background-color: violet;
+  }
+  
+  .navbar-section {
+    margin-top: 47px;
+  }
+  
+  .navbar {
+    display: flex;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-item {
+    position: relative;
+    padding: 7px 9px;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+  }
+  
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: transparent; /* Initial transparent color */
+    left: 50%;
+    bottom: -3px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-item:hover::after,
+  .nav-item.active::after {
+    width: 100%;
+    left: 0;
+    background-color: #4561EC;
+    font-weight: 800; /* Underline color for hover and active */
+  }
+  
+  .nav-item.active {
+    background-color: #243691;
+    font-weight: 800;
+  }
+  
+  ::selection {
+    background: #4561EC; /* Selection background color */
+    color: white; /* Selection text color */
+  }
+  
+  .section-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .image-gallery img {
+      width: 98%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container-fluid {
+      flex-direction: column;
+    }
+  
+    .details, .contact {
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 1536px) {
+    .css-1dh72ei-MuiContainer-root {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .card {
+      display: none; /* Hide the card on smaller screens */
+    }
+  
+    .contact-button {
+      width: 100%;
+    }
+  }
+  
+  /* Add this CSS */
+  .fixed-card {
+    position: fixed;
+    top: 200px; /* Adjust based on your design */
+    right: 150px; /* Adjust based on your design */
+    width: 310px; /* Adjust based on your design */
+    z-index: 999; /* Ensure it stays on top */
+    display: none; /* Hide by default */
+  }
+  
+  @media (min-width: 1200px) {
+    .fixed-card {
+      display: block; /* Show on screens larger than 1200px */
+    }
+  }
+  

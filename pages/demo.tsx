@@ -6,7 +6,8 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Webcam from "react-webcam";
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 import List from "./list";
-
+import map from '../public/image/map.png';
+import Image from "next/image";
 
 
 const questions = [
@@ -1360,6 +1361,10 @@ export default function DemoPage() {
               )}
             </div>
           </div>
+          <div className="w-full h-[40vh] md:w-1/2 md:h-screen bg-[#F1F2F4] relative overflow-hidden">
+          <Image src={map} alt="map"  style={{width:"100%", height:"100vh"}}/>
+          
+          </div>
           {/* <div className="w-full h-[40vh] md:w-1/2 md:h-screen bg-[#F1F2F4] relative overflow-hidden">
             <svg
               id="texture"
@@ -2239,7 +2244,7 @@ export default function DemoPage() {
               </div>
             </figure>
           </div> */}
-
+{/* 
 <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24197.669442365472!2d-71.1105562!3d42.3736164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37085d0a040d3%3A0x2efb9d1a8e50e6f0!2sBoston%2C%20MA!5e0!3m2!1sen!2sus!4v1625249264263!5m2!1sen!2sus"
             width="50%"
@@ -2247,7 +2252,7 @@ export default function DemoPage() {
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
-          ></iframe>
+          ></iframe> */}
         </div>
       )}
     </AnimatePresence>

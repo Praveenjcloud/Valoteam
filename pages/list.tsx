@@ -319,7 +319,7 @@ export default function List() {
         }}
       >
          {/* <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '10px', marginLeft: isMobile ? 0 : "20px" }}> */}
-         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px', }}>
           {/* <Select
             value={allPrice}
             onChange={() => { handleAllPrice}}

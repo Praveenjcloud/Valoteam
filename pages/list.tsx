@@ -248,15 +248,7 @@ const CardItem: React.FC<{ cardContent: CardContentProps }> = ({ cardContent }) 
             color: '#002349',
             width: "100%",
             fontSize: "11px",
-            borderRadius: '30px',
-            // paddingTop: "7px",
-            // paddingBottom: "7px",
-            // // width: "69%",
-            // '&:hover': {
-            //   backgroundColor: '#c29b40',
-            //   borderColor: '#c29b40',
-            //   color: '#fff',
-            // }
+            borderRadius: '30px'
           }}
         >
           Check Availability

@@ -251,7 +251,7 @@ const CardItem: React.FC<{ cardContent: CardContentProps }> = ({ cardContent }) 
             borderRadius: '30px',
             paddingTop: "7px",
             paddingBottom: "7px",
-            width: "69%",
+            // width: "69%",
             '&:hover': {
               backgroundColor: '#c29b40',
               borderColor: '#c29b40',

@@ -14,6 +14,7 @@ import image from '../public/image/image.png';
 import image2 from '../public/image/image2.png';
 import image3 from '../public/image/image3.png';
 import renthouse from '../public/image/renthouse.png';
+// import CardCarousel from "./CardCarousel";
 
 
 
@@ -81,6 +82,7 @@ export default function Home() {
               duration: 0.95,
               ease: [0.165, 0.84, 0.44, 1],
             }}
+            style={{lineHeight:"1.05"}}
             className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[130px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100]"
           >
             Renting made<br />
@@ -126,8 +128,8 @@ export default function Home() {
               }}
             >
               <Link
-                href="/"
-                target="_blank"
+                href="/list"
+                // target="_blank"
                 className="group rounded-full pl-[8px] min-w-[180px] pr-4 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-[#1E2B3A] text-white hover:[linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #0D2247] no-underline flex gap-x-2  active:scale-95 scale-100 duration-75"
                 style={{
                   boxShadow:
@@ -710,6 +712,10 @@ export default function Home() {
        
       </Grid>
     </Box> */}
+{/* 
+<div style={{ padding: '20px' }}>
+<CardCarousel />
+</div> */}
      </div>
      </div>
   );

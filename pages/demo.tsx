@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Webcam from "react-webcam";
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
+import List from "./list";
+
+
 
 const questions = [
   {
@@ -307,34 +310,34 @@ export default function DemoPage() {
         <div className="w-full min-h-screen flex flex-col px-4 pt-2 pb-8 md:px-8 md:py-2 bg-[#FCFCFC] relative overflow-x-hidden">
           <p className="absolute w-full top-0 h-[60px] flex flex-row justify-between -ml-4 md:-ml-8">
             <span className="text-sm text-[#1a2b3b] font-medium">
-              demo interview
+            Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20">
-              demo interview
+            Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium">
-              demo interview
+            Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden sm:block">
-              demo interview
+            Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium hidden sm:block">
-              demo interview
+            Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden xl:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden sm:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden sm:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium hidden sm:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden xl:block">
-              demo interview
+              Valoteam
             </span>
           </p>
           {completed ? (
@@ -810,27 +813,30 @@ export default function DemoPage() {
             className="absolute w-full md:w-1/2 top-0 h-[60px] flex flex-row justify-between"
           >
             <span className="text-sm text-[#1a2b3b] font-medium">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden sm:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium hidden sm:block">
-              demo interview
+              Valoteam
             </span>
             <span className="text-sm text-[#1a2b3b] font-medium opacity-20 hidden xl:block">
-              demo interview
+              Valoteam
             </span>
           </motion.p>
           <div className="w-full min-h-[60vh] md:w-1/2 md:h-screen flex flex-col px-4 pt-2 pb-8 md:px-0 md:py-2 bg-[#FCFCFC] justify-center">
             <div className="h-full w-full items-center justify-center flex flex-col">
               {step === 1 ? (
+                
+                
+                
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -840,9 +846,10 @@ export default function DemoPage() {
                     duration: 0.95,
                     ease: [0.165, 0.84, 0.44, 1],
                   }}
-                  className="max-w-lg mx-auto px-4 lg:px-0"
+                  style={{width:"100%",marginTop:"88px"}}
+                  // className=" mx-auto px-4 lg:px-0"
                 >
-                  <h2 className="text-4xl font-bold text-[#1E2B3A]">
+                  {/* <h2 className="text-4xl font-bold text-[#1E2B3A]">
                     Select a question type
                   </h2>
                   <p className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal my-4">
@@ -1028,8 +1035,14 @@ export default function DemoPage() {
                         </svg>
                       </button>
                     </div>
-                  </div>
+                  </div> */}
+                  <List/>
                 </motion.div>
+
+
+
+
+
               ) : step === 2 ? (
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}

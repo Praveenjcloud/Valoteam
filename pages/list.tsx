@@ -13,7 +13,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // import Slider from 'react-slick';
 // // @ts-ignore
 import Slider from 'react-slick';
-
+import { useRouter } from 'next/router';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import IconButton from '@mui/material/IconButton';
@@ -144,57 +144,127 @@ const sliderSettings = {
   autoplaySpeed: 2000,
 };
 
-const CardItem: React.FC<{ cardContent: CardContentProps }> = ({ cardContent }) => (
-  <Card sx={{ width: '100%', marginBottom: 2, boxShadow: 3 }}>
-    <Slider {...sliderSettings}>
-      {cardContent.images.map((image: string, index: number) => (
-        <div key={index}>
-          <CardMedia sx={{ height: 200 }} image={image} title={cardContent.title} />
-        </div>
-      ))}
-    </Slider>
-    <CardContent>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' ,marginTop:"15px"}}>
-        <Typography gutterBottom variant="h5" component="div" style={{fontSize:"17px",fontWeight:"bold"}}>
-          {cardContent.title}
-        </Typography>
-        <IconButton>
-          <MoreVertIcon />
-        </IconButton>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-        <BedIcon sx={{ marginRight: 1 ,color:"#374151"}} />
+
+// const CardItem: React.FC<{ cardContent: CardContentProps }> = ({ cardContent }) => (
+  
+//   <Card sx={{ width: '100%', marginBottom: 2, boxShadow: 3 }}>
+//     <Slider {...sliderSettings}>
+//       {cardContent.images.map((image: string, index: number) => (
+//         <div key={index}>
+//           <CardMedia sx={{ height: 200 }} image={image} title={cardContent.title} />
+//         </div>
+//       ))}
+//     </Slider>
+//     <CardContent>
+//       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' ,marginTop:"15px"}}>
+//         <Typography gutterBottom variant="h5" component="div" style={{fontSize:"17px",fontWeight:"bold"}}>
+//           {cardContent.title}
+//         </Typography>
+//         <IconButton>
+//           <MoreVertIcon />
+//         </IconButton>
+//       </Box>
+//       <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
+//         <BedIcon sx={{ marginRight: 1 ,color:"#374151"}} />
+//         <Typography variant="body2" color="#1a2b3b">
+//           {cardContent.beds}
+//         </Typography>
+//         <BathtubIcon sx={{ marginRight: 1, marginLeft: 2 , color:"#374151"}} />
+//         <Typography variant="body2" color="#1a2b3b">
+//           {cardContent.baths}
+//         </Typography>
+//       </Box>
+//       {/* <Typography gutterBottom variant="body2" color="#1a2b3b">
+//         {cardContent.subtitle}
+//       </Typography> */}
+//       <Typography variant="body2" color="#1a2b3b">
+//         {cardContent.description}
+//       </Typography>
+//     </CardContent>
+//     <CardActions sx={{ justifyContent: 'center', paddingBottom: "20px" }}>
+//       <Button variant="outlined" size="small"   sx={{ borderColor: '#c29b40', color: '#002349', width: "100%" ,fontSize: "11px",
+//     borderRadius: '30px',
+//     paddingTop: "7px",
+    
+//     paddingBottom: "7px",
+//     width:"69%",
+//       '&:hover': {
+//         backgroundColor: '#c29b40',
+//         borderColor: '#c29b40',
+//         color: '#fff',
+//       },}}>
+//         Check Availability
+//       </Button>
+//     </CardActions>
+//   </Card>
+// );
+
+const CardItem: React.FC<{ cardContent: CardContentProps }> = ({ cardContent }) => {
+  const router = useRouter();
+
+  const handleClicknew = () => {
+    router.push('/listingpage');
+  };
+
+  return (
+    <Card sx={{ width: '100%', marginBottom: 2, boxShadow: 3 }}>
+      <Slider {...sliderSettings}>
+        {cardContent.images.map((image: string, index: number) => (
+          <div key={index}>
+            <CardMedia sx={{ height: 200 }} image={image} title={cardContent.title} />
+          </div>
+        ))}
+      </Slider>
+      <CardContent>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: "15px" }}>
+          <Typography gutterBottom variant="h5" component="div" style={{ fontSize: "17px", fontWeight: "bold" }}>
+            {cardContent.title}
+          </Typography>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
+          <BedIcon sx={{ marginRight: 1, color: "#374151" }} />
+          <Typography variant="body2" color="#1a2b3b">
+            {cardContent.beds}
+          </Typography>
+          <BathtubIcon sx={{ marginRight: 1, marginLeft: 2, color: "#374151" }} />
+          <Typography variant="body2" color="#1a2b3b">
+            {cardContent.baths}
+          </Typography>
+        </Box>
         <Typography variant="body2" color="#1a2b3b">
-          {cardContent.beds}
+          {cardContent.description}
         </Typography>
-        <BathtubIcon sx={{ marginRight: 1, marginLeft: 2 , color:"#374151"}} />
-        <Typography variant="body2" color="#1a2b3b">
-          {cardContent.baths}
-        </Typography>
-      </Box>
-      {/* <Typography gutterBottom variant="body2" color="#1a2b3b">
-        {cardContent.subtitle}
-      </Typography> */}
-      <Typography variant="body2" color="#1a2b3b">
-        {cardContent.description}
-      </Typography>
-    </CardContent>
-    <CardActions sx={{ justifyContent: 'center', paddingBottom: "20px" }}>
-      <Button variant="outlined" size="small" sx={{ borderColor: '#c29b40', color: '#002349', width: "100%" ,fontSize: "11px",
-    borderRadius: '30px',
-    paddingTop: "7px",
-    paddingBottom: "7px",
-    width:"69%",
-      '&:hover': {
-        backgroundColor: '#c29b40',
-        borderColor: '#c29b40',
-        color: '#fff',
-      },}}>
-        Check Availability
-      </Button>
-    </CardActions>
-  </Card>
-);
+      </CardContent>
+      <CardActions sx={{ justifyContent: 'center', paddingBottom: "20px" }}>
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={handleClicknew}
+          sx={{
+            borderColor: '#c29b40',
+            color: '#002349',
+            width: "100%",
+            fontSize: "11px",
+            borderRadius: '30px',
+            paddingTop: "7px",
+            paddingBottom: "7px",
+            width: "69%",
+            '&:hover': {
+              backgroundColor: '#c29b40',
+              borderColor: '#c29b40',
+              color: '#fff',
+            },
+          }}
+        >
+          Check Availability
+        </Button>
+      </CardActions>
+    </Card>
+  );
+};
 
 export default function List() {
   const isDesktop = useMediaQuery('(min-width: 960px)');
@@ -206,8 +276,7 @@ export default function List() {
   const [allRentalTypes, setAllRentalTypes] = React.useState('Rental Types');
   const [nearTransit, setNearTransit] = React.useState('Near Transit');
   const [more, setMore] = React.useState('More');
-
-
+ 
   const handleAllPrice = (event: SelectChangeEvent<string>) => {
     setAllPrice(event.target.value);
   };
@@ -259,9 +328,9 @@ export default function List() {
       >
          {/* <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '10px', marginLeft: isMobile ? 0 : "20px" }}> */}
          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-          <Select
-            value="Price"
-            onChange={() => { }}
+          {/* <Select
+            value={allPrice}
+            onChange={() => { handleAllPrice}}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
@@ -269,43 +338,56 @@ export default function List() {
             <MenuItem value=" Price">Price</MenuItem>
             <MenuItem value="Price (low to high)">Price (low to high)</MenuItem>
             <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
+          </Select> */}
+
+          
+<Select
+            value={allPrice}
+            onChange={() => {handleAllPrice}}
+            displayEmpty
+            inputProps={{ 'aria-label': 'Sort' }}
+            style={{ marginTop: "10px" }}
+          >
+            <MenuItem value="Price">Price</MenuItem>
+            <MenuItem value="Price (low to high)">Price (low to high)</MenuItem>
+            <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
           </Select>
           <Select
-            value="Beds"
-            onChange={() => { }}
+            value={allBeds}
+            onChange={() => {handleAllBeds }}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
           >
             <MenuItem value="Beds">Beds</MenuItem>
-            <MenuItem value="Price (low to high)">Price (low to high)</MenuItem>
-            <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
+            <MenuItem value="2 Beds">2 Beds</MenuItem>
+            <MenuItem value="5 Beds">5 Beds</MenuItem>
           </Select>
           <Select
-            value="Pets"
-            onChange={() => { }}
+            value={pets}
+            onChange={() => { handlePets}}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
           >
             <MenuItem value="Pets">Pets</MenuItem>
-            <MenuItem value="Price (low to high)">Price (low to high)</MenuItem>
-            <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
+            <MenuItem value="Cats allowed">Cats allowed</MenuItem>
+            <MenuItem value="Dogs Allowed">Dogs Allowed</MenuItem>
           </Select>
           <Select
-            value="Rental Types"
-            onChange={() => { }}
+            value={allRentalTypes}
+            onChange={() => { handleAllRentalTypes}}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
           >
             <MenuItem value="Rental Types">Rental Types</MenuItem>
-            <MenuItem value="Price (low to high)">Price (low to high)</MenuItem>
-            <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
+            <MenuItem value="Townhome">Townhome</MenuItem>
+            <MenuItem value="Single Family Home">Single Family Home</MenuItem>
           </Select>
           <Select
-            value="Near Transit"
-            onChange={() => { }}
+            value={nearTransit}
+            onChange={() => { handleNearTransit}}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
@@ -315,8 +397,8 @@ export default function List() {
             <MenuItem value="Price (high to low)">Price (high to low)</MenuItem>
           </Select>
           <Select
-            value="More"
-            onChange={() => { }}
+            value={more}
+            onChange={() => { handleMore}}
             displayEmpty
             inputProps={{ 'aria-label': 'Sort' }}
             style={{ marginTop: "10px" }}
